@@ -68,7 +68,7 @@ t3.micro
 
 
 Please select your key pair (pem key) that is created before
-Example: clarusway.pem
+Example: my_key.pem
 
 
 12. Security groups
@@ -107,7 +107,7 @@ Keep it as is
 
 17. Go to `Launch Template` Menu
 
-18. Select `MyClaruswayTemplate` ---> `Actions` ---> `Launch Instance from Template`
+18. Select `MyFirstTemplate` ---> `Actions` ---> `Launch Instance from Template`
 
 19. Enter number of instance as `1`.
 
@@ -121,7 +121,7 @@ Keep it as is
 
 22. Go to Launch Template menu on the left hand pane
 
-23. Select template named `MyClaruswayTemplate` ---> `Actions` ---> `Modify template (Create New Version)`
+23. Select template named `MyFirstTemplate` ---> `Actions` ---> `Modify template (Create New Version)`
 
 24. Template version description
 
@@ -154,7 +154,7 @@ systemctl start nginx
 ```
 
 Create template version
-28. Go to `Launch Template` Menu and click on `MyClaruswayTemplate`.
+28. Go to `Launch Template` Menu and click on `MyFirstTemplate`.
 
 29. Select version `2` from the `Versions` tab.
 
@@ -175,7 +175,7 @@ Number of Instance : 1
 
 34. Go to `Launch Template` menu on the left hand pane.
 
-35. Select template named `MyClaruswayTemplate` ---> `Actions` ---> 'Modify template (Create New Version)'.
+35. Select template named `MyFirstTemplate` ---> `Actions` ---> 'Modify template (Create New Version)'.
 
 36.  Template version description
 V3 nginx
@@ -202,7 +202,7 @@ systemctl restart nginx
 systemctl enable nginx
 ```
 
-40. Go to `Launch Template` Menu and click on `MyClaruswayTemplate`.
+40. Go to `Launch Template` Menu and click on `MyFirstTemplate`.
 
 41. Select version `3` from the `Versions` tab.
 Version         : 3
