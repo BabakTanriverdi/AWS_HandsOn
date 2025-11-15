@@ -183,56 +183,45 @@ aws iam list-users | grep aws-cli-user
 aws iam delete-user --user-name aws-cli-user
 ```
 
-### Step 2 - S3
+### Step 2 - S3 / bucket operations
 
 - check the existing S3 buckets and create a new bucket named "aws-cli-bucket"
 ```
 aws s3 ls
-aws s3 mb s3://aws-cli-bucket-aws
+aws s3 mb s3://my_bucket
 ```
 
 - create a file in the existing directory and copy this file to newly created bucket 
 ```
 touch in-class.yaml
-aws s3 cp in-class.yaml s3://aws-cli-bucket-aws
+aws s3 cp in-class.yaml s3://my_bucket
 ```
 
 - copy this file to new folder inside bucket 
 ```
-aws s3 cp in-class.yaml s3://aws-cli-bucket-aws/new/in-class.yaml
-aws s3 ls s3://aws-cli-bucket-aws/new/
+aws s3 cp in-class.yaml s3://my_bucket/new/in-class.yaml
+aws s3 ls s3://my_bucket/new/
 ```
 
-- show the example of the user data that we used in IAM session while covering ROLES. Since we don't have any AWS CLI configuration while launching an EC2, the CLI command inside the EC2 fetch the data via ROLES rather than CLI credentials. 
-```
-#!/bin/bash
-
-dnf update -y
-dnf install -y httpd
-cd /var/www/html
-aws s3 cp s3://aws-pipeline-production/index.html .
-aws s3 cp s3://aws-pipeline-production/cat.jpg .
-systemctl enable httpd
-systemctl start httpd 
-```
 
 - Check inside of the newly created bucket.
 ```
-aws s3 ls s3://aws-cli-bucket-aws
+aws s3 ls s3://my_bucket
 ```
 
 - delete the object inside the bucket 
 ```
-aws s3 rm s3://aws-cli-bucket-aws/new/in-class.yaml
+aws s3 rm s3://my_bucket/new/in-class.yaml
 ```
 
 - remove the bucket
 ```
-aws s3 rb s3://aws-cli-bucket-aws --force
+aws s3 rb s3://my_bucket --force
 ```
 
 
 ### Step 3 - EC2
+
 - check the available commands for ec2 
 ```
 aws ec2 help
@@ -251,12 +240,13 @@ aws ec2 describe-instances --region us-east-1 --output table
 -  Launch an EC2 instance (Note that this command may not work in PowerShell because of the different meaning of "\" )
 ```
 aws ec2 run-instances \
-   --image-id ami-0cae6d6fe6048ca2c \
-   --count 1 \
-   --instance-type t3.micro \
-   --key-name KEY_NAME_HERE \  # without .pem
-   --security-group-ids sg-0123456789abcdef0 \
-   --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyFirstEC2}]'
+  --image-id ami-0cae6d6fe6048ca2c \
+  --count 1 \
+  --instance-type t3.micro \
+  --key-name my_key_name \
+  --security-group-ids sg-xxxxxxxxxxxxxx \
+  --tag-specifications 'ResourceType=instance,Tags=[{Key=Name,Value=MyFirstEC2}]'
+
 ```
 
 - List the instances filtering with key name and image id.
@@ -318,6 +308,16 @@ aws ec2 stop-instances --instance-ids $(aws ec2 describe-instances --filters "Na
 
 ```
 aws ec2 terminate-instances --instance-ids $(aws ec2 describe-instances --filters "Name = instance-type, Values = t3.micro" "Name = key-name, Values = aws" --query "Reservations[].Instances[].InstanceId[]" --output text)
+
+or next command
+
+aws ec2 terminate-instances --instance-ids $(
+  aws ec2 describe-instances \
+    --filters "Name=instance-type,Values=t3.micro" "Name=key-name,Values=my_key_name" \
+    --query "Reservations[].Instances[].InstanceId[]" \
+    --output text
+)
+
 
 ```
 
