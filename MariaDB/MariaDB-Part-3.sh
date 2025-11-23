@@ -1,13 +1,13 @@
 # Part 3 - Manipulating MariaDB Database
 
-# Login back as clarususer using the password defined.
-mysql -u clarususer -p
+# Login back as babakuser using the password defined.
+mysql -u babakuser -p
 
-# Show databases for clarususer.
+# Show databases for babakuser.
 SHOW DATABASES;
 
-# Select the database clarusdb.
-USE clarusdb;
+# Select the database babakdb.
+USE babakdb;
 
 # Create a table named offices.
 CREATE TABLE `offices` (

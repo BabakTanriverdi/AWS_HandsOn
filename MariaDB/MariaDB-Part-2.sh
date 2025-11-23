@@ -36,23 +36,23 @@ SHOW DATABASES;
 USE mysql;
 SELECT Host, User, Password FROM user;
 
-# Create new database named 'clarusdb'.
-CREATE DATABASE clarusdb;
+# Create new database named 'babakdb'.
+CREATE DATABASE babakdb;
 
 # Show newly created database.
 SHOW DATABASES;
 
-# Create a user named 'clarususer'.
-CREATE USER clarususer IDENTIFIED BY 'clarus1234';
+# Create a user named 'babakuser'.
+CREATE USER babakuser IDENTIFIED BY 'babak1234';
 
-# Grant permissions to the user clarususer for database clarusdb.
-GRANT ALL ON clarusdb.* TO clarususer IDENTIFIED BY 'clarus1234' WITH GRANT OPTION;
+# Grant permissions to the user babakuser for database babakdb.
+GRANT ALL ON babakdb.* TO babakuser IDENTIFIED BY 'babak1234' WITH GRANT OPTION;
 
 # Update privileges.
 FLUSH PRIVILEGES;
 
 # Check permission.
-SHOW GRANTS FOR 'clarususer'@'%';
+SHOW GRANTS FOR 'babakuser'@'%';
 
 # Close the mysql terminal.
 EXIT;
