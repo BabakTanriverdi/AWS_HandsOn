@@ -145,8 +145,8 @@ Edit routes
 Destination: paste "default VPC" CIDR blok
 Target ---> peering connection ---> select 'First Peering' ---> Save routes
 ```
-
-- Go to windows EC2 named 'Windows public', write IP address on browser and show them to website with KEN..
+- Go to "Peering connections" select "First Peering" . "Action --> Accept request"
+- Go to windows EC2 named 'Windows public', write IP address (Linux-Privat EC2 for Pering) on browser and show them to website with KEN..
 
 
 WARNING!!! ---> Please do not terminate "NAT Gateway" and "Private WEB EC2" for next part.
