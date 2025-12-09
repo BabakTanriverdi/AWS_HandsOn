@@ -43,9 +43,9 @@ dnf update -y
 dnf install -y httpd
 dnf install -y git
 cd /home/ec2-user
-git clone https://github.com/paul-clarusway/brainwave-website.git
+git clone https://github.com/OgulcanErdag/responsive-travel-website.git
 cd /var/www/html
-cp -R /home/ec2-user/brainwave-website/* .
+cp -R /home/ec2-user/responsive-travel-website/* .
 systemctl start httpd
 systemctl enable httpd
 
@@ -65,9 +65,9 @@ dnf update -y
 dnf install -y httpd
 dnf install -y git
 cd /home/ec2-user
-git clone https://github.com/paul-clarusway/preschool-website.git
+git clone https://github.com/OgulcanErdag/responsive-sushi-restaurant.git
 cd /var/www/html
-cp -R /home/ec2-user/preschool-website/* .
+cp -R /home/ec2-user/responsive-sushi-restaurant/* .
 systemctl start httpd
 systemctl enable httpd
 
