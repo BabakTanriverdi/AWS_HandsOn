@@ -1,0 +1,35 @@
+1 - global aws infrastructure
+
+https://aws.amazon.com/about-aws/global-infrastructure/
+
+
+
+2 - cloud front
+
+https://aws.amazon.com/cloudfront/features/
+
+
+3 - Key differences between a website endpoint and a REST API endpoint
+
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteEndpoints.html
+
+
+4 - cloud front pricing and price class
+
+https://aws.amazon.com/cloudfront/pricing/pay-as-you-go/
+
+
+5 - INSPECT AIRPORT- EDGE LOCT:
+
+https://www.feitsui.com/en/article/3
+
+
+
+6 - Restrict access to an Amazon S3 origin
+
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-s3.html
+
+7 - Cloud front default cache time
+
+https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Expiration.html
+
