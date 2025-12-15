@@ -32,10 +32,10 @@ STEP 1 : Prep - Creating S3 Bucket
 
 - Go to S3 menu using AWS console
 
-- Create a bucket of `ondia.source.lambda` with following properties,
+- Create a bucket of `my-source` with following properties,
 
 ```text
-Bucket name                 : ondia.source.lambda
+Bucket name                 : my-source
 Region                      : N.Virginia
 Block all public access     : Checked (KEEP BlOCKED)
 Versioning                  : Disabled
@@ -45,7 +45,7 @@ Object-level logging        : Disabled
 ```
 PS: Please, do not forget to select "US East (N.Virginia)" as Region
 
-- Create another bucket of `ondia.destination.lambda` with following properties,
+- Create another bucket of `my-destination` with following properties,
 
 ```text
 Bucket name                 : my-destination
@@ -144,7 +144,7 @@ STEP 5: Testing S3 Bucket Duplication
 
 - Go to S3 Bucket Service
 
-- Select S3 bucket named 'ondia.source.lambda'
+- Select S3 bucket named 'my-source'
 
 - Upload any files to source bucket
 
