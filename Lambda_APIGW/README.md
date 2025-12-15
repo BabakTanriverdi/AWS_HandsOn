@@ -48,7 +48,7 @@ PS: Please, do not forget to select "US East (N.Virginia)" as Region
 - Create another bucket of `ondia.destination.lambda` with following properties,
 
 ```text
-Bucket name                 : ondia.destination.lambda
+Bucket name                 : my-destination
 Region                      : N.Virginia
 Block all public access     : Checked (KEEP BlOCKED)
 Versioning                  : Disabled
@@ -94,7 +94,7 @@ STEP 3: Setting Trigger Event
 ```
 Trigger Configuration : S3
 
-- Bucket              : ondia.source.lambda
+- Bucket              : my-source
 
 - Event Type          : All object create events
 
@@ -114,7 +114,7 @@ s3_client = boto3.client("s3")
 
 
 def lambda_handler(event, context):
-   destination_bucket_name = 'ondia13-tr.destination.lambda'
+   destination_bucket_name = 'my-destination'
 
    # event contains all information about uploaded object
    print("Event :", event)
@@ -270,6 +270,8 @@ Settings            :
   - Name: FirstAPI
   - Description: test first api
   - Endpoint Type: Regional
+  - Security policy: TLS_1_0
+  - IP address type: IPv4
   - Click 'Create API'
 ```
 
