@@ -83,8 +83,9 @@ STEP 2: Create Lambda Function
 ```text
 1. Select Author from scratch
   Name: s3Duplicate
-  Runtime: Python 3.10
-  Role: Lambda.S3.Replica
+  Runtime: Python 3.14
+  Change default execution role: Use an existing role
+  Existing role: Lambda.S3.Replica
   
 ```
 
@@ -148,7 +149,7 @@ STEP 5: Testing S3 Bucket Duplication
 
 - Upload any files to source bucket
 
-- Go to the S3 bucket named 'ondia.destination.lambda' and show the uploaded files to the source bucket.
+- Go to the S3 bucket named 'my-destination' and show the uploaded files to the source bucket.
 
 - You can show some other functions if have enough time (Optional)
 
@@ -212,7 +213,7 @@ STEP 1: Create Lambda Function
 ```text
 1. Select Author from scratch
   Name: RandomCityGenerator
-  Runtime: Python 3.10
+  Runtime: Python 3.14
   Role: Create a new role with basic Lambda permissions
   Click 'Create function'
 ```
