@@ -56,7 +56,7 @@ for bucket in s3.buckets.all():
 
 ### STEP-2: Create an S3 bucket and list buckets again
 
-Create a file a called s3cb.py and put the code below in it.
+Create a file a called s3cb.py and put the code below in it.  For example 'babak-boto3-bucket'
 
 ```text
 import boto3
@@ -81,7 +81,7 @@ for bucket in s3.buckets.all():
 
 - Create a file in your working directory named "aws.jpg and aws1.jpg"
 
-- Create a file a called s3put.py and put the code below in it.  # For example 'babak-boto3-bucket'
+- Create a file a called s3put.py and put the code below in it.  For example 'babak-boto3-bucket'
 
 ```text
 import boto3
