@@ -4,7 +4,7 @@ import boto3
 s3 = boto3.resource('s3')
 
 # Specify the bucket name
-bucket_name = 'babak-boto3-bucket'
+bucket_name = input("Enter the S3 bucket name: ")
 
 # Access the S3 bucket
 bucket = s3.Bucket(bucket_name)
