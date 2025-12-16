@@ -3,6 +3,7 @@
 ## Outline
 
 - Part 1 - Installation and Configuration
+    (Installation for Ubuntu ./README_Ubuntu_Boto3.md)
 
 - Part 2 - Examples of Boto3 usage
 
