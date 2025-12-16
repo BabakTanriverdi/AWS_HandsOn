@@ -60,12 +60,12 @@ Create a file a called s3cb.py and put the code below in it.
 
 ```text
 import boto3
-
+bucket_name = input("Enter the S3 bucket name (unique): ")  
 # Use Amazon S3
-s3 = boto3.resource('s3')
+s3 = boto3.resource ('s3')
 
 # Create a new bucket
-s3.create_bucket(Bucket='babak-boto3-bucket')
+s3.create_bucket(Bucket=bucket_name)
 
 # Print out all bucket names
 for bucket in s3.buckets.all():
@@ -77,21 +77,24 @@ for bucket in s3.buckets.all():
 
 ### STEP-3: Upload a file to the S3 Bucket
 
-- You need a file in your working directory (test.jpg for this case) to upload.  
+- You need a file in your working directory to upload. 
 
-- Create a file in your working directory named "test.jpg"
+- Create a file in your working directory named "aws.jpg and aws1.jpg"
 
-- Create a file a called s3put.py and put the code below in it.
+- Create a file a called s3put.py and put the code below in it.  # For example 'babak-boto3-bucket'
 
 ```text
 import boto3
+put_file = input("Enter the file name to upload to S3: ")   
+bucket_name = input("Enter the S3 bucket name: ")
 
 # Use Amazon S3
 s3 = boto3.resource('s3')
 
 # Upload a new file
-data = open('test.jpg', 'rb')
-s3.Bucket('babak-boto3-bucket').put_object(Key='test.jpg', Body=data)
+data = open(put_file, 'rb')
+s3.Bucket(bucket_name).put_object(Key=put_file, Body=data)
+print(f"File {put_file} has been uploaded to S3 bucket '{bucket_name}'.")  
 ```
 - Check the "babak-boto3-bucket", if your script works fine, you should be able to see your test file in your bucket.
 
@@ -106,11 +109,11 @@ ec2 = boto3.resource('ec2')
 
 # create a new EC2 instance
 instances = ec2.create_instances(
-     ImageId='ami-068c0051b15cdb816', # ubuntu ami id
+     ImageId='ami-084568db4383264d4', # ubuntu  ami id
      MinCount=1,
      MaxCount=1,
-     InstanceType='t2.micro',
-     KeyName='yourkeypair without .pem here' # put your keypair
+     InstanceType='t3.micro',
+     KeyName='my_key' #yourkeypair without .pem
  )
 ```
 
@@ -121,16 +124,21 @@ instances = ec2.create_instances(
 
 ```text
 import boto3
+ec2id = input("Enter the instance ID to stop: ") # Use Amazon EC2
 ec2 = boto3.resource('ec2')
-ec2.Instance('your InstanceID').stop() # put your instance id
+ec2.Instance(ec2id).stop() 
+print(f"Instance {ec2id} has been stopped.")
 ```
 
 - Create a file a called ec2terminate.py and put the code below in it to terminate EC2 instance via boto3.
 
 ```text
 import boto3
+ec2id = input("Enter the instance ID to terminate: ")
+# Use Amazon EC2
 ec2 = boto3.resource('ec2')
-ec2.Instance('your InstanceID').terminate() # put your instance id
+ec2.Instance(ec2id).terminate()
+print(f"Instance {ec2id} has been terminated.")
 ```
 - Check the EC2 instance status from console.
 
