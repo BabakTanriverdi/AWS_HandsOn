@@ -1,14 +1,16 @@
-# Hands-on Boto3-01 : Installation, Configuration and Examples of Boto3 
+# Hands-on Boto3-01 : Installation, Configuration and Examples of Boto3
 
 ## Outline
 
-- Part 1 - Installation and Configuration
-    (Installation for Ubuntu ./README_Ubuntu_Boto3.md)
-
-- Part 2 - Examples of Boto3 usage
+- [Part 1 - Installation and Configuration](#part-1---installation-and-configuration)
+  - [Installation for Ubuntu (Boto3 – venv based)](README_Ubuntu_Boto3.md)
+- [Part 2 - Examples of Boto3 usage](#part-2---examples-of-boto3-usage)
 
 
 ## Part 1 - Installation and Configuration
+
+➡️ **Detailed Ubuntu setup guide:**  
+[Installation for Ubuntu (Boto3 – venv based)](README_Ubuntu_Boto3.md)
 
 - To install Boto3, open your terminal (Commands below works also for Command Prompt-Windows), and type the code below for the latest version.
 
@@ -29,10 +31,10 @@ aws configure
 - Then enter the credentials:
 
 ```text
-AWS Access Key ID [****************EMOJ]: 
-AWS Secret Access Key [****************/aND]: 
-Default region name [us-east-1]: 
-Default output format [yaml]: 
+AWS Access Key ID [****************EMOJ]:
+AWS Secret Access Key [****************/aND]:
+Default region name [us-east-1]:
+Default output format [yaml]:
 ```
 
 
@@ -78,7 +80,7 @@ for bucket in s3.buckets.all():
 
 ### STEP-3: Upload a file to the S3 Bucket
 
-- You need a file in your working directory to upload. 
+- You need a file in your working directory to upload.
 
 - Create a file in your working directory named "aws.jpg and aws1.jpg"
 
@@ -127,7 +129,7 @@ instances = ec2.create_instances(
 import boto3
 ec2id = input("Enter the instance ID to stop: ") # Use Amazon EC2
 ec2 = boto3.resource('ec2')
-ec2.Instance(ec2id).stop() 
+ec2.Instance(ec2id).stop()
 print(f"Instance {ec2id} has been stopped.")
 ```
 
@@ -150,3 +152,4 @@ Links:
 https://aws.amazon.com/sdk-for-python/
 
 https://boto3.amazonaws.com/v1/documentation/api/latest/index.html
+
