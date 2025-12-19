@@ -99,7 +99,7 @@ stress --cpu 80 --timeout 50000
 
 - 2- Send an infinite loop of queries to the nginx server 
 ```bash
-while true; do wget -q -O- http://44.221.67.79/; done 
+while true; do wget -q -O- http://100.48.99.163/; done 
 ```
 http://44.221.67.79/
 
