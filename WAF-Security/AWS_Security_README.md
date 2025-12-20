@@ -61,7 +61,7 @@ Tag:
 
 ```text
 - Amazon Machine Image (AMI):   Amazon Linux 2 AMI (HVM), SSD Volume Type
-- Instance Type:                t2.micro
+- Instance Type:                t3.micro
 - Network:                      Select your default VPC
 - Subnet:                       Select a public subnet
 - Auto-assign Public IP:        Enabled
