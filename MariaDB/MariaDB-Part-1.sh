@@ -3,7 +3,7 @@
 # Launch EC2 Instance.
 
 # AMI: Amazon Linux 2023
-# Instance Type: t2.micro
+# Instance Type: t3.micro
 # Security Group
 #   - SSH           -----> 22    -----> Anywhere
 #   - MYSQL/Aurora  -----> 3306  -----> Anywhere

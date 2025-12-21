@@ -3,7 +3,7 @@
 # Launch EC2 Instance (Ubuntu 24.04) and name it as MariaDB-Client on Ubuntu.
 
 # AMI: Ubuntu 24.04
-# Instance Type: t2.micro
+# Instance Type: t3.micro
 # Security Group
 #   - SSH           -----> 22    -----> Anywhere
 
