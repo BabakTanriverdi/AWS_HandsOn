@@ -7,13 +7,12 @@ phases:
       - npm i -g @angular/cli@9.0.6
   pre_build:
     commands:
-      - cd CodePipeline_S3_AWS
       - npm ci || npm install
   build:
     commands:
       - ng build --configuration production
 artifacts:
   files:
-    - "**/*"
-  base-directory: CodePipeline_S3_AWS/dist
+    - '**/*'
+  base-directory: dist
   
