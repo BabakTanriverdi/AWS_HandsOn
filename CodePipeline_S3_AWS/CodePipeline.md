@@ -11,7 +11,7 @@ At the end of the this hands-on training, students will be able to;
 
 - demonstrate their knowledge on how to creating CI/CD Pipeline.
 
-- create S3 bucket fpr deployment.
+- create S3 bucket for deployment.
 
 - use GitCommit for version control system-git and create Repository 
 
@@ -40,7 +40,7 @@ At the end of the this hands-on training, students will be able to;
 - Create a bucket with following properties, 
 
 ```text
-Bucket name                 : myangular.<domainname>
+Bucket name                 : codepip.babak-devops.com
 Region                      : N.Virginia
 Object Ownership            : ***ACLs enabled - Bucket owner preferred 
 Block all public access     : UnChecked (Public)
@@ -70,10 +70,10 @@ Error document - optional   : index.html
 - Create Alias record for S3 bucket
 
 ```text
-Subdomain   : myangular.<domainname>
+Subdomain   : codepip.babak-devops.com
 RecordType  : A
 Alias       : Enabled
-Value       : S3 bucket - myangular.<domainname>
+Value       : S3 bucket - codepip.babak-devops.com
 TTL         : 60
 ```
 
@@ -224,7 +224,7 @@ Project name       : Click on "Create Project"  and on the opening page
 ```
 - Deploy provider               : AWS S3 
 - region                        : N.Virginia
-- Bucket                        : your bucket name - myangular.<domainname>
+- Bucket                        : your bucket name - codepip.babak-devops.com
 - S3 object key                 : keep it as is --Empty 
 - Extract file before deploy    : Enable !!!
 - ***Additional configuration      :    
